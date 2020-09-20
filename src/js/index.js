@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  var body = document.body;
+
   var menuButton = document.querySelector('.button--menu');
   var closeButton = document.querySelector('.menu__close-button');
   var menu = document.querySelector('.menu');
@@ -71,39 +73,45 @@ document.addEventListener('DOMContentLoaded', function () {
   menuButton.addEventListener('click', function (event) {
     event.preventDefault();
     menu.classList.toggle('menu--opened');
+    body.classList.toggle('body--limited');
   });
 
   closeButton.addEventListener('click', function (event) {
     event.preventDefault();
     menu.classList.toggle('menu--opened');
+    body.classList.toggle('body--limited');
   });
 
   var messageButton = document.querySelector('button.button--message');
-  var callbackCloseButton = document.querySelector('.callback .modal__close-button');
-  var callbackBlock = document.querySelector('.callback');
+  var callbackCloseButton = document.querySelector('.modal--message .modal__close-button');
+  var callbackBlock = document.querySelector('.modal--message');
 
   messageButton.addEventListener('click', function (event) {
     event.preventDefault();
     callbackBlock.classList.toggle('modal--opened');
+    body.classList.toggle('body--limited');
   });
 
   callbackCloseButton.addEventListener('click', function (event) {
     event.preventDefault();
     callbackBlock.classList.toggle('modal--opened');
+    body.classList.toggle('body--limited');
   });
 
   var callButton = document.querySelector('button.button--phone');
-  var callCloseButton = document.querySelector('.ask-call .modal__close-button');
-  var callBlock = document.querySelector('.ask-call');
+  var callCloseButton = document.querySelector('.modal--callback .modal__close-button');
+  var callBlock = document.querySelector('.modal--callback');
 
   callButton.addEventListener('click', function (event) {
     event.preventDefault();
     callBlock.classList.toggle('modal--opened');
+    body.classList.toggle('body--limited');
   });
 
   callCloseButton.addEventListener('click', function (event) {
     event.preventDefault();
     callBlock.classList.toggle('modal--opened');
+    body.classList.toggle('body--limited');
   });
 });
 
