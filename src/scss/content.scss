@@ -27,27 +27,6 @@ $titleDecoration: #41F6D7;
     height:40px;
   }
 
-  .title{
-    padding-left:32px;
-    position: relative;
-    font-family: 'TT Lakes Bold', 'Arial', sans-serif;
-    font-size: 28px;
-    margin-top: 16px;
-    display: inline-block;
-  }
-
-  .title:before{
-    content:"";
-    display: block;
-    position:absolute;
-    height:calc(100% + 10px);
-    width:8px;
-    border-radius: 10px;
-    background-color: $titleDecoration;
-    left:-4px;
-    top:-5px;
-  }
-
   .header{
     display: flex;
     background-color: #fff;

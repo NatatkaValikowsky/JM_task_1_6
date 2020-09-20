@@ -77,5 +77,33 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     menu.classList.toggle('menu--opened');
   });
+
+  var messageButton = document.querySelector('button.button--message');
+  var callbackCloseButton = document.querySelector('.callback .modal__close-button');
+  var callbackBlock = document.querySelector('.callback');
+
+  messageButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    callbackBlock.classList.toggle('modal--opened');
+  });
+
+  callbackCloseButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    callbackBlock.classList.toggle('modal--opened');
+  });
+
+  var callButton = document.querySelector('button.button--phone');
+  var callCloseButton = document.querySelector('.ask-call .modal__close-button');
+  var callBlock = document.querySelector('.ask-call');
+
+  callButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    callBlock.classList.toggle('modal--opened');
+  });
+
+  callCloseButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    callBlock.classList.toggle('modal--opened');
+  });
 });
 

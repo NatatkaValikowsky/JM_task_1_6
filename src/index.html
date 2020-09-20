@@ -467,6 +467,51 @@
     </footer>
   </main>
 
+  <section class="callback modal">
+    <div class="modal__content">
+      <header class="modal__header header">
+        <button class="modal__close-button button button--circle button--close"></button>
+
+        <h1 class="modal__title title">
+          Обратная связь
+        </h1>
+      </header>
+
+      <form class="modal__form form">
+        <input type="text" class="form__field" name="name" placeholder="Имя">
+        <input type="text" class="form__field" name="surname" placeholder="Фамилия">
+        <input type="text" class="form__field" name="email" placeholder="Электронная почта">
+        <textarea placeholder="Сообщение" name="message" cols="30" rows="5" class="form__field"></textarea>
+        <p class="form__agreement agreement">
+          Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
+          <a href="#" class="agreement__link">политикой конфиденциальности</a>
+        </p>
+        <button class="form__button button button--circle button--submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="ask-call modal">
+    <div class="modal__content">
+      <header class="modal__header header">
+        <button class="modal__close-button button button--circle button--close"></button>
+
+        <h1 class="modal__title title">
+          Заказать звонок
+        </h1>
+      </header>
+
+      <form class="modal__form form">
+        <input type="text" class="form__field" name="phone" placeholder="Телефон">
+        <p class="form__agreement agreement">
+          Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
+          <a href="#" class="agreement__link">политикой конфиденциальности</a>
+        </p>
+        <button class="form__button button button--circle button--submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
 </div>
 </body>
 </html>

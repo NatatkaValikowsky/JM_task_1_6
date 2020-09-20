@@ -2,10 +2,31 @@ $titleDecoration: #41F6D7;
 $grey: #7E7E82;
 $pinkColor: #FF3E79;
 
-.menu{
+.button{
+  cursor:pointer;
+  background-color: $pinkColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition-duration: .5s;
+}
 
+.button:hover{
+  transform: scale(1.1);
+  background-color: $titleDecoration;
+}
+
+.button--circle{
+  width:40px;
+  height:40px;
+}
+
+.menu{
   width:320px;
-  height:100%;
   background-color: #fff;
   padding: 24px 0 24px 24px;
   box-sizing: border-box;
@@ -29,29 +50,6 @@ $pinkColor: #FF3E79;
   @media(min-width: 1120px){
     position:static;
     transform:translateX(0);
-  }
-
-  .button{
-    cursor:pointer;
-    background-color: $pinkColor;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:none;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition-duration: .5s;
-  }
-
-  .button:hover{
-    transform: scale(1.1);
-    background-color: $titleDecoration;
-  }
-
-  .button--circle{
-    width:40px;
-    height:40px;
   }
 
   .menu{
