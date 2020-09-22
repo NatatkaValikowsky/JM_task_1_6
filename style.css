@@ -166,7 +166,7 @@
   height: 40px;
   border-radius: 50%;
   border: 2px solid #FF3E79;
-  background-image: url(./static/arrow_icon2.svg);
+  background-image: url(./static/arrow_icon.svg);
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -779,7 +779,7 @@ body {
   height: 40px;
   border-radius: 50%;
   border: 2px solid #FF3E79;
-  background-image: url(./static/arrow_icon2.svg);
+  background-image: url(./static/arrow_icon.svg);
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
