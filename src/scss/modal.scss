@@ -1,27 +1,19 @@
 .modal{
-  width:100%;
-  background-color: rgba(255,255,255,.95);
+  width:320px;
+  min-height:100vh;
   position: fixed;
   top: 0;
-  right:-100%;
+  right:0;
   display: flex;
-  justify-content: flex-end;
-  z-index:2;
+  flex-direction: column;
+  z-index:3;
   transition: .5s;
+  background-color: #fff;
+  box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
+  transform: translateX(150%);
 
-  &.modal--opened{
-    transform: translateX(-100%);
-  }
-
-  .modal__content{
-    width: 320px;
-    min-height:100vh;
-    background-color: #fff;
-    height:100%;
-
-    @media(min-width: 1120px){
-      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
-    }
+  &--opened{
+    transform: translateX(0);
   }
 
   .modal__header{

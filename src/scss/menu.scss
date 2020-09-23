@@ -8,9 +8,10 @@ $pinkColor: #FF3E79;
   background-color: #fff;
   padding: 24px 0 24px 24px;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
+  top:0;
   left:0;
-  z-index: 2;
+  z-index: 3;
   -webkit-transition: .5s;
   -moz-transition: .5s;
   -o-transition: .5s;
@@ -23,6 +24,7 @@ $pinkColor: #FF3E79;
     transform:translateX(0);
     overflow: hidden;
     height:auto;
+    z-index:1;
   }
 
   &.menu--opened{

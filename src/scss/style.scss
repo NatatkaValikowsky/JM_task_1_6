@@ -6,6 +6,8 @@
 @import "./modal";
 @import "./footer";
 
+@import "./blocks/overlay";
+
 $titleDecoration: #41F6D7;
 $grey: #7E7E82;
 $pinkColor: #FF3E79;
@@ -19,11 +21,6 @@ $pinkColor: #FF3E79;
 
 body{
   background-color: #F8F8F8;
-}
-
-.body--limited{
-  height:100vh;
-  overflow: hidden;
 }
 
 .wrapper{
