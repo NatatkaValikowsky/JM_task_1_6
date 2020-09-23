@@ -3,7 +3,7 @@ $grey: #7E7E82;
 $pinkColor: #FF3E79;
 
 .menu{
-  width:100%;
+  width:320px;
   height:100vh;
   background-color: #fff;
   padding: 24px 0 24px 24px;
@@ -17,10 +17,6 @@ $pinkColor: #FF3E79;
   transition: .5s;
   transform: translateX(-100%);
   overflow-y: scroll;
-
-  @media(min-width: 768px){
-    width:320px;
-  }
 
   @media(min-width: 1120px){
     position:static;

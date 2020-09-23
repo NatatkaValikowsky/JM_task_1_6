@@ -82,30 +82,40 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.toggle('body--limited');
   });
 
-  var messageButton = document.querySelector('button.button--message');
+  var messageButton = document.querySelectorAll('.button--message');
   var callbackCloseButton = document.querySelector('.modal--message .modal__close-button');
   var callbackBlock = document.querySelector('.modal--message');
 
-  messageButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    callbackBlock.classList.toggle('modal--opened');
-    body.classList.toggle('body--limited');
+  messageButton.forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      callbackBlock.classList.toggle('modal--opened');
+      body.classList.toggle('body--limited');
+    });
   });
 
   callbackCloseButton.addEventListener('click', function (event) {
     event.preventDefault();
     callbackBlock.classList.toggle('modal--opened');
     body.classList.toggle('body--limited');
+    if(menu.classList.contains('menu--opened')){
+      menu.classList.remove('menu--opened');
+    }
   });
 
-  var callButton = document.querySelector('button.button--phone');
+  var callButton = document.querySelectorAll('.button--phone');
   var callCloseButton = document.querySelector('.modal--callback .modal__close-button');
   var callBlock = document.querySelector('.modal--callback');
 
-  callButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    callBlock.classList.toggle('modal--opened');
-    body.classList.toggle('body--limited');
+  callButton.forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      callBlock.classList.toggle('modal--opened');
+      body.classList.toggle('body--limited');
+      if(menu.classList.contains('menu--opened')){
+        menu.classList.remove('menu--opened');
+      }
+    });
   });
 
   callCloseButton.addEventListener('click', function (event) {

@@ -14,13 +14,12 @@
   }
 
   .modal__content{
-    width:100%;
+    width: 320px;
     min-height:100vh;
     background-color: #fff;
     height:100%;
 
     @media(min-width: 1120px){
-      width: 440px;
       box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
     }
   }
