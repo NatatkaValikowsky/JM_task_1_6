@@ -8,7 +8,7 @@
   transition-property: transform;
   flex-shrink: 0;
 
-  @media(min-width: 768px){
+  @media(min-width: $m-size){
     display: block;
     flex-shrink: 0;
     flex-grow: 0;

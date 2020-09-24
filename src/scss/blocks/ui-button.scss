@@ -23,7 +23,7 @@
   &--close{
     background-image: url($imgFolder + 'icons/close_icon.svg');
 
-    @media(min-width: 1120px){
+    @media(min-width: $l-size){
       display: none;
     }
   }

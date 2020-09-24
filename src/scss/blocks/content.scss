@@ -1,6 +1,6 @@
 .content{
 
-  @media(min-width:768px){
+  @media(min-width:$m-size){
     display:flex;
     padding:16px;
   }
@@ -10,7 +10,7 @@
     padding: 0 24px;
     position: relative;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       width:50%;
     }
   }
@@ -18,7 +18,7 @@
   .content__img-block{
     margin-top:24px;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       margin-top:0;
       width:50%;
     }

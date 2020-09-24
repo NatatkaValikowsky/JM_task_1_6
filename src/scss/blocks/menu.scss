@@ -15,7 +15,7 @@
   transform: translateX(-100%);
   overflow-y: scroll;
 
-  @media(min-width: 1120px){
+  @media(min-width: $l-size){
     position:static;
     transform:translateX(0);
     overflow: hidden;
@@ -39,7 +39,7 @@
     margin-left:17px;
     margin-right:auto;
 
-    @media(min-width: 1120px){
+    @media(min-width: $l-size){
       margin-left: 0;
     }
   }

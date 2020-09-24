@@ -16,13 +16,13 @@
   .expand-block{
     height:auto;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       height:170px;
     }
 
     &--expanded{
 
-      @media(min-width: 768px){
+      @media(min-width: $m-size){
         height:auto;
       }
     }

@@ -1,6 +1,6 @@
 .slider{
 
-  @media(min-width:768px){
+  @media(min-width: $m-size){
     overflow: hidden;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -12,7 +12,7 @@
     list-style: none;
     padding:0;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -23,7 +23,7 @@
   .slider__item{
     margin-bottom: 28px;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       margin: 8px 0 8px 24px;
     }
   }

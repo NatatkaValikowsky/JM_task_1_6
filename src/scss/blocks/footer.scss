@@ -4,7 +4,7 @@
   margin-top: 64px;
 }
 
-@media(min-width: 768px){
+@media(min-width: $m-size){
   .footer{
     display: flex;
     padding:0 16px;
@@ -16,7 +16,7 @@
   padding:8px 16px;
 }
 
-@media(min-width: 768px){
+@media(min-width: $m-size){
   .footer__item{
     flex-basis: 33%;
     font-size: 14px;

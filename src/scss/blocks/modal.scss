@@ -25,7 +25,7 @@
     display: block;
   }
 
-  @media(min-width: 1120px){
+  @media(min-width: $l-size){
     .modal__close-button{
       position: absolute;
       left: -86px;

@@ -9,7 +9,7 @@
     align-items:center;
     border-bottom:1px solid #D9FFF5;
 
-    @media(min-width: 1120px){
+    @media(min-width: $l-size){
       position:absolute;
       background-color: transparent;
       right:0;
@@ -21,13 +21,13 @@
   .main__logo{
     margin:0 auto 0 16px;
 
-    @media(min-width: 1120px){
+    @media(min-width: $l-size){
       display:none;
     }
   }
 
   .main__menu-button{
-    @media(min-width: 1120px){
+    @media(min-width: $l-size){
       display: none;
     }
   }

@@ -2,10 +2,10 @@
 
   .section__header{
     padding:16px 16px;
-    background: linear-gradient(to right, $title-color-first: 0%, $title-color-second 100%);
+    background: linear-gradient(to right, $title-color-first 0%, $title-color-second 100%);
     border-top: 1px solid #D9FFF5;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       padding: 16px 30px;
     }
   }
@@ -19,7 +19,7 @@
   .section__content{
     padding:0 16px;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       padding: 0 30px;
     }
   }
@@ -27,7 +27,7 @@
   .section__slider{
     margin-top: 16px;
 
-    @media(min-width: 768px){
+    @media(min-width: $m-size){
       height: 180px;
     }
   }
