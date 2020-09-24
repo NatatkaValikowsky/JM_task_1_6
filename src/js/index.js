@@ -66,19 +66,24 @@ document.addEventListener('DOMContentLoaded', function () {
   var body = document.body;
 
   var menuButton = document.querySelector('.ui-button--menu');
-  var closeButton = document.querySelector('.ui-button--close');
+  var closeButton = document.querySelector('.menu .ui-button--close');
   var menu = document.querySelector('.menu');
 
   menuButton.addEventListener('click', function (event) {
     event.preventDefault();
-    menu.classList.toggle('menu--opened');
-    body.classList.toggle('body--limited');
+    menu.classList.add('menu--opened');
   });
 
   closeButton.addEventListener('click', function (event) {
     event.preventDefault();
-    menu.classList.toggle('menu--opened');
-    body.classList.toggle('body--limited');
+    menu.classList.remove('menu--opened');
+  });
+
+  menu.addEventListener('click', function (event) {
+    event.preventDefault();
+    if(event.target === menu){
+      menu.classList.remove('menu--opened');
+    }
   });
 
   var messageButton = document.querySelectorAll('.ui-button--message');
@@ -88,17 +93,20 @@ document.addEventListener('DOMContentLoaded', function () {
   messageButton.forEach(function (element) {
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      callbackBlock.classList.toggle('modal--opened');
-      body.classList.toggle('body--limited');
+      callbackBlock.classList.add('modal--opened');
     });
   });
 
   callbackCloseButton.addEventListener('click', function (event) {
     event.preventDefault();
-    callbackBlock.classList.toggle('modal--opened');
+    callbackBlock.classList.remove('modal--opened');
     body.classList.toggle('body--limited');
-    if(menu.classList.contains('menu--opened')){
-      menu.classList.remove('menu--opened');
+  });
+
+  callbackBlock.addEventListener('click', function (event) {
+    event.preventDefault();
+    if(event.target === callbackBlock){
+      callbackBlock.classList.remove('modal--opened');
     }
   });
 
@@ -109,18 +117,31 @@ document.addEventListener('DOMContentLoaded', function () {
   callButton.forEach(function (element) {
     element.addEventListener('click', function (event) {
       event.preventDefault();
-      callBlock.classList.toggle('modal--opened');
+      callBlock.classList.add('modal--opened');
       body.classList.toggle('body--limited');
-      if(menu.classList.contains('menu--opened')){
-        menu.classList.remove('menu--opened');
-      }
     });
   });
 
   callCloseButton.addEventListener('click', function (event) {
     event.preventDefault();
-    callBlock.classList.toggle('modal--opened');
-    body.classList.toggle('body--limited');
+    callBlock.classList.remove('modal--opened');
+  });
+
+  callBlock.addEventListener('click', function (event) {
+    event.preventDefault();
+    if(event.target === callBlock){
+      callBlock.classList.remove('modal--opened');
+    }
+  });
+
+  document.addEventListener('keyup', function (event) {
+    var isEsc = event.code === 'Escape';
+    if(isEsc && callbackBlock.classList.contains('modal--opened') || callBlock.classList.contains('modal--opened')){
+      callbackBlock.classList.remove('modal--opened');
+      callBlock.classList.remove('modal--opened');
+    } else if(isEsc && menu.classList.contains('menu--opened')){
+      menu.classList.remove('menu--opened');
+    }
   });
 });
 
