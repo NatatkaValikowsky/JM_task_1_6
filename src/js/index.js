@@ -3,7 +3,6 @@ import '../scss/style.scss';
 
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
-import '../scss/slider.scss';
 
 function getSlider(obj){
   this.init(obj);

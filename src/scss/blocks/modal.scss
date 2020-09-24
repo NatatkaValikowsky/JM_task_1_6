@@ -1,0 +1,41 @@
+.modal{
+  width:320px;
+  min-height:100vh;
+  position: fixed;
+  top: 0;
+  right:0;
+  display: flex;
+  flex-direction: column;
+  z-index:3;
+  transition: .5s;
+  background-color: #fff;
+  box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
+  transform: translateX(150%);
+
+  &--opened{
+    transform: translateX(0);
+  }
+
+  .modal__header{
+    position: relative;
+  }
+
+  .modal__close-button{
+    margin:24px 16px;
+    display: block;
+  }
+
+  @media(min-width: 1120px){
+    .modal__close-button{
+      position: absolute;
+      left: -86px;
+      top: -12px;
+    }
+  }
+
+  .modal__title{
+    font-size: 24px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+}

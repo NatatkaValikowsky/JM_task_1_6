@@ -1,0 +1,26 @@
+.content{
+
+  @media(min-width:768px){
+    display:flex;
+    padding:16px;
+  }
+
+  .content__text{
+
+    padding: 0 24px;
+    position: relative;
+
+    @media(min-width: 768px){
+      width:50%;
+    }
+  }
+
+  .content__img-block{
+    margin-top:24px;
+
+    @media(min-width: 768px){
+      margin-top:0;
+      width:50%;
+    }
+  }
+}

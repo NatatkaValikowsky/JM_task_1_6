@@ -1,0 +1,50 @@
+.main{
+  width: 100%;
+  overflow: hidden;
+
+  .main__header{
+    display: flex;
+    background-color: #fff;
+    padding:16px;
+    align-items:center;
+    border-bottom:1px solid #D9FFF5;
+
+    @media(min-width: 1120px){
+      position:absolute;
+      background-color: transparent;
+      right:0;
+      top:0;
+      border:none;
+    }
+  }
+
+  .main__logo{
+    margin:0 auto 0 16px;
+
+    @media(min-width: 1120px){
+      display:none;
+    }
+  }
+
+  .main__menu-button{
+    @media(min-width: 1120px){
+      display: none;
+    }
+  }
+
+  .main__about-section{
+    margin-top:8px;
+  }
+
+  .main__brands-section{
+    margin-top: 24px;
+  }
+
+  .main__types-section{
+    margin-top: 24px;
+  }
+
+  .main__price-section{
+    margin-top: 24px;
+  }
+}

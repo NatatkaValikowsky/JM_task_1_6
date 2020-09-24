@@ -1,0 +1,20 @@
+.lang-list{
+  list-style: none;
+  display: flex;
+
+  .lang-list__item{
+    margin: 0 4px;
+  }
+
+  .lang-list__button{
+    text-transform: uppercase;
+    font-family: 'TT Lakes Medium', sans-serif;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .lang-list__button--current{
+    color: $light-text-color;
+  }
+}

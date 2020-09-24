@@ -2,7 +2,7 @@
   width:40px;
   height:40px;
   cursor:pointer;
-  background-color: $pinkColor;
+  background-color: $main-button-color;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@
 
   &:hover{
     transform: scale(1.1);
-    background-color: $titleDecoration;
+    background-color: $hover-button-color;
   }
 
   &--close{

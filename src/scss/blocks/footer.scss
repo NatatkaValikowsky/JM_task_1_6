@@ -1,6 +1,6 @@
 .footer{
   list-style: none;
-  color: #7E7E82;
+  color: $light-text-color;
   margin-top: 64px;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .footer__link{
-  color: #7E7E82;
+  color: $light-text-color;
 }

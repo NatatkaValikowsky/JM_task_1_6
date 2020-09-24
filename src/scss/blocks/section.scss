@@ -1,0 +1,38 @@
+.section{
+
+  .section__header{
+    padding:16px 16px;
+    background: linear-gradient(to right, $title-color-first: 0%, $title-color-second 100%);
+    border-top: 1px solid #D9FFF5;
+
+    @media(min-width: 768px){
+      padding: 16px 30px;
+    }
+  }
+
+  .section__title{
+    text-transform: uppercase;
+    color: $light-text-color;
+    margin:0;
+  }
+
+  .section__content{
+    padding:0 16px;
+
+    @media(min-width: 768px){
+      padding: 0 30px;
+    }
+  }
+
+  .section__slider{
+    margin-top: 16px;
+
+    @media(min-width: 768px){
+      height: 180px;
+    }
+  }
+
+  .section__slider--expand{
+    height:auto;
+  }
+}

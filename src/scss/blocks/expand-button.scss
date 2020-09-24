@@ -1,0 +1,39 @@
+.expand-button{
+  display:none;
+  color:#000;
+  text-decoration: none;
+  font-family: 'TT Lakes Medium', sans-serif;
+  font-size: 14pt;
+  margin-top: 16px;
+  border:none;
+  background-color: transparent;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+
+  &:before{
+    content: "";
+    width:30px;
+    height:30px;
+    position:absolute;
+    background-image: url($imgFolder + 'icons/expand_icon.svg');
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    left:0;
+    top:0;
+    transition-duration: .5s;
+  }
+
+  &--expanded:before{
+    transform: rotate(180deg);
+    top:-25%;
+  }
+
+  @media(min-width: 768px){
+    display: block;
+  }
+
+  &--visible{
+    display:block;
+  }
+}

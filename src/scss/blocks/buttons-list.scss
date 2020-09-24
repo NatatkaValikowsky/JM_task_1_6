@@ -1,0 +1,84 @@
+.buttons-list{
+  display: flex;
+  list-style: none;
+  padding:0;
+  position:relative;
+  justify-content: flex-start;
+
+  .buttons-list__button{
+    margin:0 8px 0 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .buttons-list__button:nth-child(1){
+    margin-left:0;
+  }
+
+  &--contacts{
+    display: none;
+
+    @media(min-width: 768px){
+      display:flex;
+      padding-right: 16px;
+    }
+
+    @media(min-width: 1120px){
+      display:none;
+    }
+  }
+
+  &--service:before{
+    content: "";
+    display: block;
+    position: absolute;
+    left:0;
+    top:50%;
+    margin-top:-16px;
+    width: 2px;
+    height:32px;
+    background-color: $hr-elements-color;
+
+    @media(min-width: 1120px){
+      display:none;
+    }
+  }
+
+  .buttons-list__link{
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    position:relative;
+
+    &:after{
+      content:"";
+      display: block;
+      width: 40px;
+      height:40px;
+      border-radius: 50%;
+      background-color: $main-button-color;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &--callback:after{
+      background-image: url(../img/icons/callback_icon.svg);
+    }
+
+    &--status:after{
+      background-image: url(../img/icons/service_status_icon.svg);
+    }
+  }
+
+  .buttons-list__button-text{
+    display: none;
+    margin-right: 8px;
+    font-family: 'TT Lakes Medium', sans-serif;
+
+    @media(min-width: 1120px){
+      display: block;
+    }
+  }
+}

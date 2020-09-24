@@ -3,21 +3,32 @@
 
 /*Стили для блоков*/
 @import "blocks/menu";
-
-
-
-@import "./content";
-@import "./modal";
-@import "./footer";
-
-@import "/blocks/ui-button";
-@import "/blocks/action-button";
-
-@import "./blocks/overlay";
-
-$titleDecoration: #41F6D7;
-$grey: #7E7E82;
-$pinkColor: #FF3E79;
+@import "blocks/buttons-list";
+@import "blocks/contact-list";
+@import "blocks/lang-list";
+@import 'blocks/expand-button';
+@import "blocks/main";
+@import "blocks/nav";
+@import "blocks/section";
+@import "blocks/slider";
+@import "blocks/expand-block";
+@import "blocks/slider-item";
+@import "blocks/slider-pagination";
+@import "blocks/about-section";
+@import "blocks/content";
+@import "blocks/text";
+@import "blocks/img-block";
+@import "blocks/brands-section";
+@import "blocks/types-section";
+@import "blocks/price-section";
+@import "blocks/modal";
+@import "blocks/form";
+@import "blocks/agreement";
+@import "blocks/footer";
+@import "blocks/ui-button";
+@import "blocks/action-button";
+@import "blocks/title";
+@import "blocks/overlay";
 
 *{
   padding:0;
@@ -27,29 +38,9 @@ $pinkColor: #FF3E79;
 }
 
 body{
-  background-color: #F8F8F8;
+  background-color: $body-color;
 }
 
 .wrapper{
   display: flex;
-}
-
-.title{
-  padding-left:32px;
-  position: relative;
-  font-family: 'TT Lakes Bold', 'Arial', sans-serif;
-  font-size: 28px;
-  display: inline-block;
-}
-
-.title:before{
-  content:"";
-  display: block;
-  position:absolute;
-  height:calc(100% + 10px);
-  width:8px;
-  border-radius: 10px;
-  background-color: $titleDecoration;
-  left:-4px;
-  top:-5px;
 }

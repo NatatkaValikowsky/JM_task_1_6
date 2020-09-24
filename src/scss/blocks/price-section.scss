@@ -1,0 +1,152 @@
+.price-section{
+  @media(min-width: 768px){
+    .section__slider{
+      height:auto;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider__wrapper{
+      flex-direction: column;
+      margin-left:0;
+    }
+  }
+
+  .slider-item{
+    height:200px;
+    width: 260px;
+    padding:16px 16px;
+    position:relative;
+  }
+
+  @media(min-width: 768px){
+    .slider__item{
+      margin:0;
+    }
+
+    .slider-item{
+      width:100%;
+      max-height:64px;
+      border-radius: 0;
+      box-sizing: border-box;
+      border:none;
+      padding: 0 24px;
+    }
+
+    .slider-item:nth-child(2){
+      border-radius: 6px 6px 0 0;
+    }
+
+    .slider-item:nth-child(n+3):before{
+      content:"";
+      width:96%;
+      height:1px;
+      background-color: $default-border-color;
+      position: absolute;
+      top:0;
+      left:2%;
+    }
+
+    .slider-item:last-of-type{
+      border-radius: 0 0 6px 6px;
+    }
+  }
+
+  .slider-item--caption{
+    display: none;
+    border:none;
+    background-color: transparent;
+
+    .slider-item__link:after{
+      display: none;
+    }
+
+    @media(min-width: 768px){
+      display: block;
+    }
+  }
+
+  .slider-item__link{
+    flex-direction: column;
+    font-size: 14px;
+
+    @media(min-width: 768px){
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .slider-item__link:after{
+    display: none;
+  }
+
+  .slider-item__item-caption{
+    color: $light-text-color;
+    font-family: 'TT Lakes Medium', sans-serif;
+
+    @media(min-width: 768px){
+      display: none;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider-item__item-caption:not(:nth-child(3n+1)){
+      margin-top: 16px;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider-item__item-value:nth-child(2){
+      width: 45%;
+    }
+  }
+
+  @media(min-width: 800px){
+    .slider-item__item-value:nth-child(2){
+      width: 50%;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider-item__item-value:nth-child(4){
+      width: 20%;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider-item__item-value:nth-child(6){
+      width: 20%;
+    }
+  }
+
+  .slider-item__action-button{
+    position: absolute;
+    bottom:0;
+    right:0;
+  }
+
+  @media(min-width: 768px){
+    .slider-item__action-button{
+      position: static;
+    }
+  }
+
+  .section__price-description{
+    display: block;
+    color: $light-text-color;
+    margin-top: 16px;
+  }
+
+  .section__get-offer{
+    display: block;
+    margin-top: 16px;
+    text-decoration: none;
+    color: $dark-text-color;
+    font-family: 'TT Lakes Medium', sans-serif;
+    padding-top: 16px;
+  }
+
+  .section__get-offer:hover{
+    text-decoration: none;
+  }
+}

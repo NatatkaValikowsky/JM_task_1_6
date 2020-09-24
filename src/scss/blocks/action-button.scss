@@ -1,6 +1,6 @@
 .action-button{
   color: #ffffff;
-  background-color: #FF3E79;
+  background-color: $main-button-color;
   width: 119px;
   height: 32px;
   border-radius: 16px;
@@ -23,6 +23,6 @@
 
   &:hover{
     transform: scale(1.1);
-    background-color: #41F6D7;
+    background-color: $hover-button-color;
   }
 }

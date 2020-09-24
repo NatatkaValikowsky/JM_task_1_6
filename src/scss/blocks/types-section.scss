@@ -1,0 +1,25 @@
+.types-section{
+
+  .slider-item{
+    height: 160px;
+    padding: 16px;
+  }
+
+  .slider-item__link:after{
+    bottom: 0;
+  }
+
+  .expand-block{
+    height:auto;
+  }
+
+  @media(min-width: 768px){
+    .expand-block{
+      height:170px;
+    }
+  }
+
+  .expand-block--expanded{
+    height:auto;
+  }
+}

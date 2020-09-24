@@ -1,7 +1,3 @@
-$titleDecoration: #41F6D7;
-$grey: #7E7E82;
-$pinkColor: #FF3E79;
-
 .menu{
   width:320px;
   height:100vh;
@@ -27,7 +23,7 @@ $pinkColor: #FF3E79;
     z-index:1;
   }
 
-  &.menu--opened{
+  &--opened{
     box-shadow: 16px 0 30px 0 rgba(14, 24, 80, .2);
     transform: translateX(0);
   }
@@ -54,7 +50,7 @@ $pinkColor: #FF3E79;
 
   .menu__nav-link{
     text-decoration: none;
-    color: #000000;
+    color: $dark-text-color;
     padding: 16px 0;
     position: relative;
     display: block;
@@ -69,7 +65,7 @@ $pinkColor: #FF3E79;
   }
 
   .menu__nav-link--active{
-    color:$grey;
+    color:$light-text-color;
   }
 
   .menu__nav-link--active:before{
@@ -79,7 +75,7 @@ $pinkColor: #FF3E79;
     height:calc(100% + 10px);
     width:8px;
     border-radius: 10px;
-    background-color: $titleDecoration;
+    background-color: $text-decorate-color;
     left:-28px;
     top:-5px;
   }
@@ -88,56 +84,13 @@ $pinkColor: #FF3E79;
     margin-top: 268px;
   }
 
-  .buttons-list{
-    display: flex;
-    list-style: none;
-    padding:0;
-    position:relative;
-    justify-content: flex-start;
-  }
-
-  .buttons-list__button{
-    margin:0 8px;
-  }
-
-  .buttons-list__button:nth-child(1){
-    margin-left:0;
-  }
-
   .menu__contact-list{
     list-style: none;
     margin-top: 16px;
     font-family: 'TT Lakes Medium', sans-serif;
   }
 
-  .contact-list__item--phone{
-    margin-top: 12px;
-    font-size: 24px;
-    font-family: 'TT Lakes Bold', sans-serif;
-  }
-
   .menu__lang-list{
     margin-top: 40px;
-  }
-
-  .lang-list{
-    list-style: none;
-    display: flex;
-  }
-
-  .lang-list__item{
-    margin: 0 4px;
-  }
-
-  .item__button{
-    text-transform: uppercase;
-    font-family: 'TT Lakes Medium', sans-serif;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .item__button--current{
-    color: $grey;
   }
 }

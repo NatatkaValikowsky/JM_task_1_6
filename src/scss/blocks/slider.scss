@@ -1,0 +1,39 @@
+.slider{
+
+  @media(min-width:768px){
+    overflow: hidden;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+  }
+
+  .slider__wrapper{
+    list-style: none;
+    padding:0;
+
+    @media(min-width: 768px){
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: -24px;
+    }
+  }
+
+  .slider__item{
+    margin-bottom: 28px;
+
+    @media(min-width: 768px){
+      margin: 8px 0 8px 24px;
+    }
+  }
+
+  .swiper-pagination-bullet{
+    width: 12px;
+    height:12px;
+  }
+
+  .swiper-pagination-bullet-active{
+    background-color: $pagination-bullet-active-color;
+  }
+}
