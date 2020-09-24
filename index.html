@@ -8,107 +8,108 @@
 <link href="style.css" rel="stylesheet"></head>
 <body>
 <div class="wrapper">
+  <aside class="menu">
+    <section class="menu__content">
+      <header class="menu__header">
 
-  <section class="menu">
-    <header class="menu__header">
+        <button class="menu__close-button ui-button ui-button--close"></button>
 
-      <button class="menu__close-button button button--circle button--close"></button>
+        <div class="menu__logo logo">
+          <a class="logo__link" href="/">
+            <img class="logo__img" src="./img/logo.svg" alt="Логотип компании">
+          </a>
+        </div>
 
-      <div class="menu__logo logo">
-        <a class="logo__link" href="/">
-          <img class="logo__img" src="./img/logo.svg" alt="Логотип компании">
-        </a>
-      </div>
+        <button class="menu__search-button ui-button ui-button--search"></button>
 
-      <button class="menu__search-button button button--circle button--search"></button>
+      </header>
 
-    </header>
+      <nav class="menu__nav">
+        <ul class="menu__nav-list">
 
-    <nav class="menu__nav">
-      <ul class="menu__nav-list">
+          <li class="menu__nav-item">
+            <a class="menu__nav-link menu__nav-link--active" href="#">Ремонт техники</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link menu__nav-link--active" href="#">Ремонт техники</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Услуги и сервисы</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Услуги и сервисы</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Корпоративным клиентам</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Корпоративным клиентам</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Продавцам техники</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Продавцам техники</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Партнерам</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Партнерам</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Производителям</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Производителям</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Наши сервисные центры</a>
+          </li>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Наши сервисные центры</a>
-        </li>
+          <li class="menu__nav-item">
+            <a class="menu__nav-link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
 
-        <li class="menu__nav-item">
-          <a class="menu__nav-link" href="#">Контакты</a>
-        </li>
-      </ul>
-    </nav>
+      <footer class="menu__footer">
 
-    <footer class="menu__footer">
+        <ul class="menu__buttons-list buttons-list">
 
-      <ul class="menu__buttons-list buttons-list">
+          <li class="buttons-list__button">
+            <button class="ui-button ui-button--phone" aria-label="Позвонить"></button>
+          </li>
 
-        <li class="buttons-list__button">
-          <a href="tel:+1234567890" class="button button--circle button--phone" aria-label="Позвонить"></a>
-        </li>
+          <li class="buttons-list__button">
+            <button class="ui-button ui-button--message" aria-label="Отправить сообщение"></button>
+          </li>
 
-        <li class="buttons-list__button">
-          <a href="mailto:valikowa.natalya@yandex.ru" class="button button--circle button--message" aria-label="Отправить сообщение"></a>
-        </li>
+          <li class="buttons-list__button">
+            <a href="#" class="ui-button ui-button--profile" aria-label="Перейти в профиль"></a>
+          </li>
 
-        <li class="buttons-list__button">
-          <a href="#" class="button button--circle button--profile" aria-label="Перейти в профиль"></a>
-        </li>
+        </ul>
 
-      </ul>
+        <ul class="menu__contact-list contact-list">
+          <li class="contact-list__item contact-list__item--email">
+            mail@cps.com
+          </li>
+          <li class="contact-list__item contact-list__item--phone">
+            8 800 890 8900
+          </li>
+        </ul>
 
-      <ul class="menu__contact-list contact-list">
-        <li class="contact-list__item contact-list__item--email">
-          mail@cps.com
-        </li>
-        <li class="contact-list__item contact-list__item--phone">
-          8 800 890 8900
-        </li>
-      </ul>
+        <ul class="menu__lang-list lang-list">
+          <li class="lang-list__item">
+            <button type="button" class="lang-list__button lang-list__button--current">ru</button>
+          </li>
+          <li class="lang-list__item">
+            <button type="button" class="lang-list__button">en</button>
+          </li>
+          <li class="lang-list__item">
+            <button type="button" class="lang-list__button">ch</button>
+          </li>
+        </ul>
 
-      <ul class="menu__lang-list lang-list">
-        <li class="lang-list__item item">
-          <button type="button" class="item__button item__button--current">ru</button>
-        </li>
-        <li class="lang-list__item">
-          <button type="button" class="item__button">en</button>
-        </li>
-        <li class="lang-list__item">
-          <button type="button" class="item__button">ch</button>
-        </li>
-      </ul>
-
-    </footer>
-  </section>
+      </footer>
+    </section>
+  </aside>
 
   <main class="main">
-    <header class="main__header header">
+    <header class="main__header">
 
-      <button type="button" class="header__menu-button button button--circle button--menu" aria-label="Открыть меню"></button>
+      <button type="button" class="main__menu-button ui-button ui-button--menu" aria-label="Открыть меню"></button>
 
-      <div class="header__logo logo">
+      <div class="main__logo logo">
         <a class="logo__link" href="/">
           <img class="logo__img" src="./img/logo.svg" alt="Логотип компании">
         </a>
@@ -117,15 +118,15 @@
       <ul class="header__buttons-list buttons-list buttons-list--contacts">
 
         <li class="buttons-list__button">
-          <button class="button button--circle button--phone" aria-label="Позвонить"></button>
+          <button class="ui-button ui-button--phone" aria-label="Позвонить"></button>
         </li>
 
         <li class="buttons-list__button">
-          <button class="button button--circle button--message" aria-label="Отправить сообщение"></button>
+          <button class="ui-button ui-button--message" aria-label="Отправить сообщение"></button>
         </li>
 
         <li class="buttons-list__button">
-          <button class="button button--circle button--profile" aria-label="Перейти в профиль"></button>
+          <button class="ui-button ui-button--profile" aria-label="Перейти в профиль"></button>
         </li>
 
       </ul>
@@ -298,7 +299,7 @@
     <section class="main__types-section section types-section">
       <header class="section__header">
         <h3 class="section__title">
-          Ремонт техники различных брендов
+          Ремонт различных видов техники
         </h3>
       </header>
 
@@ -376,14 +377,14 @@
           <ul class="swiper-wrapper slider__wrapper">
 
             <li class="slider__item slider-item slider-item--caption">
-              <a class="slider-item__link" href="#">
+              <span class="slider-item__link" href="#">
                 <span class="slider-item__item-caption">Ремонтные услуги</span>
                 <span class="slider-item__item-value">Ремонтные услуги</span>
                 <span class="slider-item__item-caption">Цена</span>
                 <span class="slider-item__item-value">Цена</span>
                 <span class="slider-item__item-caption">Срок</span>
                 <span class="slider-item__item-value">Срок</span>
-              </a>
+              </span>
             </li>
 
             <li class="slider__item slider-item">
@@ -394,6 +395,7 @@
               <span class="slider-item__item-value">Бесплатно</span>
               <span class="slider-item__item-caption">Срок</span>
               <span class="slider-item__item-value">30 мин</span>
+              <button class="slider-item__action-button action-button">Заказать</button>
             </a>
           </li>
 
@@ -405,6 +407,7 @@
                 <span class="slider-item__item-value">1000 &#8381;</span>
                 <span class="slider-item__item-caption">Срок</span>
                 <span class="slider-item__item-value">30-120 мин</span>
+                <button class="slider-item__action-button action-button">Заказать</button>
               </a>
             </li>
 
@@ -416,6 +419,7 @@
                 <span class="slider-item__item-value">1000 &#8381;</span>
                 <span class="slider-item__item-caption">Срок</span>
                 <span class="slider-item__item-value">30-120 мин</span>
+                <button class="slider-item__action-button action-button">Заказать</button>
               </a>
             </li>
 
@@ -427,6 +431,7 @@
                 <span class="slider-item__item-value">1000 &#8381;</span>
                 <span class="slider-item__item-caption">Срок</span>
                 <span class="slider-item__item-value">30-120 мин</span>
+                <button class="slider-item__action-button action-button">Заказать</button>
               </a>
             </li>
 
@@ -438,6 +443,7 @@
                 <span class="slider-item__item-value">1000 &#8381;</span>
                 <span class="slider-item__item-caption">Срок</span>
                 <span class="slider-item__item-value">30-120 мин</span>
+                <button class="slider-item__action-button action-button">Заказать</button>
               </a>
             </li>
 
@@ -445,70 +451,72 @@
           <div class="slider__pagination slider-pagination"></div>
         </div>
 
-        <span class="section__price-description">
-          Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание оставьте заявку.
-        </span>
+        <article class="section__footer">
 
-        <a href="#" class="section__get-offer get-offer">
-          Получить коммерческое предложение
-          <img src="./static/arrow_icon.svg" width="8" height="auto" alt="">
-        </a>
+          <span class="section__price-description">
+          Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание оставьте заявку.
+          </span>
+
+          <a href="#" class="section__get-offer get-offer">
+            Получить коммерческое предложение
+            <img src="./static/arrow_icon.svg" width="8" height="auto" alt="">
+          </a>
+
+        </article>
       </div>
 
     </section>
 
     <footer class="main__footer footer">
-      <ul class="footer__list">
-        <li class="footer__item">&copy; 2019 CPS<br>Разработано командой Apesong</li>
-        <li class="footer__item">Политика конфиденциальности</li>
-        <li class="footer__item">Информация, размещенная на данной странице, не является публичной офертой</li>
-      </ul>
+        <p class="footer__item">&copy; 2019 CPS<br>Разработано командой <a class="footer__link" href="#">Apesong</a></p>
+        <p class="footer__item"><a class="footer__link" href="">Политика конфиденциальности</a></p>
+        <p class="footer__item">Информация, размещенная на данной странице, не является публичной офертой</p>
     </footer>
   </main>
 
-  <section class="modal modal--message">
-    <div class="modal__content">
-      <header class="modal__header header">
-        <button class="modal__close-button button button--circle button--close"></button>
-        <h1 class="modal__title title">
-          Обратная связь
-        </h1>
-      </header>
+  <aside class="modal modal--message">
+      <section class="modal__content">
+        <header class="modal__header header">
+          <button class="modal__close-button ui-button ui-button--close"></button>
+          <h1 class="modal__title title">
+            Обратная связь
+          </h1>
+        </header>
 
-      <form class="modal__form form">
-        <input type="text" class="form__field" name="name" placeholder="Имя">
-        <input type="text" class="form__field" name="surname" placeholder="Фамилия">
-        <input type="text" class="form__field" name="email" placeholder="Электронная почта">
-        <textarea placeholder="Сообщение" name="message" cols="30" rows="5" class="form__field"></textarea>
-        <p class="form__agreement agreement">
-          Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
-          <a href="#" class="agreement__link">политикой конфиденциальности</a>
-        </p>
-        <button class="form__button button button--submit">Отправить</button>
-      </form>
-    </div>
-  </section>
+        <form class="modal__form form">
+          <input type="text" class="form__input" name="name" placeholder="Имя">
+          <input type="text" class="form__input" name="surname" placeholder="Фамилия">
+          <input type="text" class="form__input" name="email" placeholder="Электронная почта">
+          <textarea placeholder="Сообщение" name="message" cols="30" rows="5" class="form__textarea"></textarea>
+          <p class="form__agreement agreement">
+            Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
+            <a href="#" class="agreement__link">политикой конфиденциальности</a>
+          </p>
+          <button class="form__button action-button">Отправить</button>
+        </form>
+      </section>
+  </aside>
 
-  <section class="modal modal--callback">
-    <div class="modal__content">
-      <header class="modal__header header">
-        <button class="modal__close-button button button--circle button--close"></button>
+  <aside class="modal modal--callback">
+      <section class="modal__content">
+        <header class="modal__header header">
+          <button class="modal__close-button ui-button ui-button--close"></button>
 
-        <h1 class="modal__title title">
-          Заказать звонок
-        </h1>
-      </header>
+          <h1 class="modal__title title">
+            Заказать звонок
+          </h1>
+        </header>
 
-      <form class="modal__form form">
-        <input type="text" class="form__field" name="phone" placeholder="Телефон">
-        <p class="form__agreement agreement">
-          Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
-          <a href="#" class="agreement__link">политикой конфиденциальности</a>
-        </p>
-        <button class="form__button button button--submit">Отправить</button>
-      </form>
-    </div>
-  </section>
+        <form class="modal__form form">
+          <input type="text" class="form__input" name="phone" placeholder="Телефон">
+          <p class="form__agreement agreement">
+            Нажимая "отправить", вы даете согласие на <a href="#" class="agreement__link">обработку персональных данных</a> и соглашаетесь с нашей
+            <a href="#" class="agreement__link">политикой конфиденциальности</a>
+          </p>
+          <button class="form__button action-button">Отправить</button>
+        </form>
+      </section>
+  </aside>
 
 </div>
 <script type="text/javascript" src="./js/bundle.js"></script></body>
