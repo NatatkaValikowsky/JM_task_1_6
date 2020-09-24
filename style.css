@@ -40,15 +40,21 @@
     transition: .5s;
     overflow-y: scroll;
     box-shadow: 16px 0 30px 0 rgba(14, 24, 80, 0.2); }
+    @media (min-width: 1120px) {
+      .menu .menu__content {
+        overflow-y: hidden;
+        box-shadow: none;
+        height: auto; } }
   @media (min-width: 1120px) {
     .menu {
-      width: 320px;
+      width: auto;
       height: auto;
       position: static;
-      transform: translateX(0);
       overflow: hidden;
       height: auto;
-      z-index: 1; } }
+      z-index: 1;
+      transform: none;
+      flex-shrink: 0; } }
   .menu .menu__header {
     display: flex;
     padding: 0 24px 24px 0;
