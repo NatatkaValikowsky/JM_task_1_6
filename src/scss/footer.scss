@@ -1,11 +1,11 @@
-.footer__list{
+.footer{
   list-style: none;
   color: #7E7E82;
   margin-top: 64px;
 }
 
 @media(min-width: 768px){
-  .footer__list{
+  .footer{
     display: flex;
     padding:0 16px;
   }
@@ -30,4 +30,8 @@
   .footer__item:nth-child(3){
     text-align: right;
   }
+}
+
+.footer__link{
+  color: #7E7E82;
 }

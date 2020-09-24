@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var body = document.body;
 
-  var menuButton = document.querySelector('.button--menu');
-  var closeButton = document.querySelector('.menu__close-button');
+  var menuButton = document.querySelector('.ui-button--menu');
+  var closeButton = document.querySelector('.ui-button--close');
   var menu = document.querySelector('.menu');
 
   menuButton.addEventListener('click', function (event) {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.toggle('body--limited');
   });
 
-  var messageButton = document.querySelectorAll('.button--message');
+  var messageButton = document.querySelectorAll('.ui-button--message');
   var callbackCloseButton = document.querySelector('.modal--message .modal__close-button');
   var callbackBlock = document.querySelector('.modal--message');
 
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  var callButton = document.querySelectorAll('.button--phone');
+  var callButton = document.querySelectorAll('.ui-button--phone');
   var callCloseButton = document.querySelector('.modal--callback .modal__close-button');
   var callBlock = document.querySelector('.modal--callback');
 

@@ -42,26 +42,10 @@ $pinkColor: #FF3E79;
   .menu__logo{
     margin-left:17px;
     margin-right:auto;
-  }
 
-  @media(min-width: 1120px){
-    .menu__logo{
+    @media(min-width: 1120px){
       margin-left: 0;
     }
-  }
-
-  .button--close{
-    background-image: url(../img/icons/close_icon.svg);
-  }
-
-  @media(min-width: 1120px){
-    .button--close{
-      display: none;
-    }
-  }
-
-  .button--search{
-    background-image: url(../img/icons/search_icon.svg);
   }
 
   .menu__nav-list{
@@ -118,18 +102,6 @@ $pinkColor: #FF3E79;
 
   .buttons-list__button:nth-child(1){
     margin-left:0;
-  }
-
-  .button--phone{
-    background-image: url(../img/icons/phone_icon.svg);
-  }
-
-  .button--message{
-    background-image: url(../img/icons/message_icon.svg);
-  }
-
-  .button--profile{
-    background-image: url(../img/icons/profile_icon.svg);
   }
 
   .menu__contact-list{

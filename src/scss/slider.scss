@@ -284,26 +284,7 @@
   }
 
   .slider-item__link:after{
-    content: "Заказать";
-    color: #ffffff;
-    background-color: #FF3E79;
-    width:119px;
-    height: 32px;
-    border-radius: 16px;
-    display:flex;
-    align-items: center;
-    font-family: "TT Lakes Bold", sans-serif;
-    padding:0 8px;
-    bottom:0;
-    box-sizing: border-box;
-    background-image: url(../img/icons/arrow_icon_white.svg);
-    background-position: 90% center;
-    text-transform: uppercase;
-    font-size: 12px;
-
-    @media(min-width: 768px){
-      bottom:auto;
-    }
+    display: none;
   }
 
   .slider-item__item-caption{
@@ -336,6 +317,24 @@
   @media(min-width: 768px){
     .slider-item__item-value:nth-child(4){
       width: 20%;
+    }
+  }
+
+  @media(min-width: 768px){
+    .slider-item__item-value:nth-child(6){
+      width: 20%;
+    }
+  }
+
+  .slider-item__action-button{
+    position: absolute;
+    bottom:0;
+    right:0;
+  }
+
+  @media(min-width: 768px){
+    .slider-item__action-button{
+      position: static;
     }
   }
 

@@ -1,10 +1,17 @@
 @import "./fonts";
+@import "./variables";
 
 /*Стили для блоков*/
-@import "./menu";
+@import "blocks/menu";
+
+
+
 @import "./content";
 @import "./modal";
 @import "./footer";
+
+@import "/blocks/ui-button";
+@import "/blocks/action-button";
 
 @import "./blocks/overlay";
 
@@ -45,26 +52,4 @@ body{
   background-color: $titleDecoration;
   left:-4px;
   top:-5px;
-}
-
-.button{
-  cursor:pointer;
-  background-color: $pinkColor;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border:none;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.button--circle{
-  width:40px;
-  height:40px;
-}
-
-.button:hover{
-  transform: scale(1.1);
-  background-color: $titleDecoration;
 }

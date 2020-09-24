@@ -1,0 +1,50 @@
+.ui-button{
+  width:40px;
+  height:40px;
+  cursor:pointer;
+  background-color: $pinkColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+
+  &:hover{
+    transform: scale(1.1);
+    background-color: $titleDecoration;
+  }
+
+  &--close{
+    background-image: url($imgFolder + 'icons/close_icon.svg');
+
+    @media(min-width: 1120px){
+      display: none;
+    }
+  }
+
+  &--search{
+    background-image: url($imgFolder + 'icons/search_icon.svg');
+  }
+
+  &--phone{
+    background-image: url($imgFolder + 'icons/phone_icon.svg');
+  }
+
+  &--message{
+    background-image: url($imgFolder + 'icons/message_icon.svg');
+  }
+
+  &--profile{
+    background-image: url($imgFolder + 'icons/profile_icon.svg');
+  }
+
+  &--menu{
+    background-image: url($imgFolder + 'icons/menu_icon.svg');
+  }
+}

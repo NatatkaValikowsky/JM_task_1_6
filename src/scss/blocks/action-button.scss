@@ -1,0 +1,28 @@
+.action-button{
+  color: #ffffff;
+  background-color: #FF3E79;
+  width: 119px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  font-family: "TT Lakes Bold", sans-serif;
+  padding: 0 8px;
+  box-sizing: border-box;
+  background-image: url($imgFolder + 'icons/arrow_icon_white.svg');
+  background-position: 90% center;
+  text-transform: uppercase;
+  font-size: 12px;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  background-repeat: no-repeat;
+  border:none;
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.1);
+    background-color: #41F6D7;
+  }
+}
