@@ -29,16 +29,23 @@
     transition: .5s;
     overflow-y: scroll;
     box-shadow: 16px 0 30px 0 rgba(14, 24, 80, .2);
+
+    @media(min-width: $l-size){
+      overflow-y: hidden;
+      box-shadow: none;
+      height: auto;
+    }
   }
 
   @media(min-width: $l-size){
-    width:320px;
+    width:auto;
     height:auto;
     position:static;
-    transform:translateX(0);
     overflow: hidden;
     height:auto;
     z-index:1;
+    transform: none;
+    flex-shrink: 0;
   }
 
   .menu__header{
