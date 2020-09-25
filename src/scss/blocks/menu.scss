@@ -1,51 +1,32 @@
 .menu{
-  z-index: 3;
-  width:100%;
+  width:320px;
   height:100vh;
-  position: fixed;
-  overflow: hidden;
-  top:0;
-  left:0;
-  background-color: rgba(255,255,255,.95);
-  transform: translateX(-100%);
+  background-color: #fff;
+  padding: 24px 0 24px 24px;
+  box-sizing: border-box;
   -webkit-transition: .5s;
   -moz-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
+  overflow-y: scroll;
+  flex-shrink: 0;
+  position: fixed;
+  left:0;
+  top:0;
+  z-index:3;
+  transform: translateX(-100%);
 
   &--opened{
+    box-shadow: 16px 0 30px 0 rgba(14, 24, 80, .2);
     transform: translateX(0);
   }
 
-  .menu__content{
-    width:320px;
-    height:100vh;
-    background-color: #fff;
-    padding: 24px 0 24px 24px;
-    box-sizing: border-box;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-    overflow-y: scroll;
-    box-shadow: 16px 0 30px 0 rgba(14, 24, 80, .2);
-
-    @media(min-width: $l-size){
-      overflow-y: hidden;
-      box-shadow: none;
-      height: auto;
-    }
-  }
-
   @media(min-width: $l-size){
-    width:auto;
-    height:auto;
-    position:static;
-    overflow: hidden;
-    height:auto;
-    z-index:1;
+    overflow-y: hidden;
+    box-shadow: none;
+    height: auto;
+    position: static;
     transform: none;
-    flex-shrink: 0;
   }
 
   .menu__header{

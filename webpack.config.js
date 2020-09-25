@@ -6,7 +6,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   // Входной файл
   entry: [
-    './src/js/index.js'
+    './src/js/index.js',
+    './src/js/expanded-block.js',
+    './src/js/menu.js',
+    './src/js/modal.js',
+    './src/js/slider.js'
   ],
 
   // Выходной файл
