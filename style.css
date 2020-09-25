@@ -246,6 +246,8 @@
     margin-top: 24px; }
   .main .main__price-section {
     margin-top: 24px; }
+  .main .main__footer {
+    margin-top: 64px; }
 
 .nav .nav__list {
   display: flex;
@@ -629,8 +631,7 @@
 
 .footer {
   list-style: none;
-  color: #7E7E82;
-  margin-top: 64px; }
+  color: #7E7E82; }
 
 @media (min-width: 768px) {
   .footer {
