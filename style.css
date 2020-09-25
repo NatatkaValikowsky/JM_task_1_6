@@ -705,7 +705,8 @@
   transition: .5s;
   background-repeat: no-repeat;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  text-decoration: none; }
   .action-button:hover {
     transform: scale(1.1);
     background-color: #41F6D7; }
