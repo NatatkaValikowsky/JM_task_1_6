@@ -127,7 +127,7 @@
       padding-left: 24px; } }
   .buttons-list--service:before {
     content: "";
-    display: block;
+    display: none;
     position: absolute;
     left: 0;
     top: 50%;
@@ -135,6 +135,9 @@
     width: 2px;
     height: 32px;
     background-color: #EAEAEA; }
+    @media (min-width: 768px) {
+      .buttons-list--service:before {
+        display: block; } }
     @media (min-width: 1120px) {
       .buttons-list--service:before {
         display: none; } }
