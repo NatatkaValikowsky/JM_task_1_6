@@ -37,7 +37,7 @@
 
   &--service:before{
     content: "";
-    display: block;
+    display: none;
     position: absolute;
     left:0;
     top:50%;
@@ -45,6 +45,10 @@
     width: 2px;
     height:32px;
     background-color: $hr-elements-color;
+
+    @media(min-width: $m-size){
+      display:block;
+    }
 
     @media(min-width: $l-size){
       display:none;
