@@ -730,7 +730,8 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #F8F8F8; }
+  background-color: #F8F8F8;
+  min-width: 320px; }
 
 .wrapper {
   display: flex; }
