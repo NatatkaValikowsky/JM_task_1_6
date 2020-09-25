@@ -19,42 +19,29 @@
 /* переменные для медиа-запросов */
 /*Стили для блоков*/
 .menu {
-  z-index: 3;
-  width: 100%;
+  width: 320px;
   height: 100vh;
+  background-color: #fff;
+  padding: 24px 0 24px 24px;
+  box-sizing: border-box;
+  transition: .5s;
+  overflow-y: scroll;
+  flex-shrink: 0;
   position: fixed;
-  overflow: hidden;
-  top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  transform: translateX(-100%);
-  transition: .5s; }
+  top: 0;
+  z-index: 3;
+  transform: translateX(-100%); }
   .menu--opened {
+    box-shadow: 16px 0 30px 0 rgba(14, 24, 80, 0.2);
     transform: translateX(0); }
-  .menu .menu__content {
-    width: 320px;
-    height: 100vh;
-    background-color: #fff;
-    padding: 24px 0 24px 24px;
-    box-sizing: border-box;
-    transition: .5s;
-    overflow-y: scroll;
-    box-shadow: 16px 0 30px 0 rgba(14, 24, 80, 0.2); }
-    @media (min-width: 1120px) {
-      .menu .menu__content {
-        overflow-y: hidden;
-        box-shadow: none;
-        height: auto; } }
   @media (min-width: 1120px) {
     .menu {
-      width: auto;
+      overflow-y: hidden;
+      box-shadow: none;
       height: auto;
       position: static;
-      overflow: hidden;
-      height: auto;
-      z-index: 1;
-      transform: none;
-      flex-shrink: 0; } }
+      transform: none; } }
   .menu .menu__header {
     display: flex;
     padding: 0 24px 24px 0;
@@ -97,6 +84,21 @@
     font-family: 'TT Lakes Medium', sans-serif; }
   .menu .menu__lang-list {
     margin-top: 40px; }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none; }
+  .overlay--active {
+    display: block; }
+  .overlay--menu {
+    z-index: 2; }
+  .overlay--modal {
+    z-index: 4; }
 
 .buttons-list {
   display: flex;
@@ -562,27 +564,19 @@
   text-decoration: none; }
 
 .modal {
-  width: 100%;
-  height: 100vh;
+  width: 320px;
+  min-height: 100vh;
   position: fixed;
   right: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 5;
+  background-color: #fff;
   display: flex;
-  justify-content: flex-end;
-  z-index: 3;
-  transform: translateX(100%);
+  flex-direction: column;
+  transform: translateX(150%);
   transition: .5s; }
-  .modal .modal__content {
-    width: 320px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    z-index: 3;
-    transition: .5s;
-    background-color: #fff;
-    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2); }
   .modal--opened {
+    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
     transform: translateX(0); }
   .modal .modal__header {
     position: relative; }
