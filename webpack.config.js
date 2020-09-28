@@ -10,8 +10,7 @@ module.exports = {
     './src/js/expanded-block.js',
     './src/js/menu.js',
     './src/js/modal.js',
-    './src/js/slider.js',
-    './src/js/escape-listener.js'
+    './src/js/slider.js'
   ],
 
   // Выходной файл

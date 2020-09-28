@@ -1,27 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const menuButton = document.querySelector('.ui-button--menu'),
-    closeButton = document.querySelector('.menu .ui-button--close'),
-    menu = document.querySelector('.menu'),
-    menuWrapper = document.querySelector('.overlay--menu');
+  const buttonOpenMenu = document.querySelector('.ui-button--menu'),
+        buttonCloseMenu = document.querySelector('.menu .ui-button--close'),
+        menu = document.querySelector('.menu'),
+        overlayMenu = document.querySelector('.overlay--menu'),
+        overlayModal = document.querySelector('.overlay--modal');
 
-  menuButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    menu.classList.add('menu--opened');
-    menuWrapper.classList.add('overlay--active');
-  });
+  buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
 
-  closeButton.addEventListener('click', function (event) {
+  function buttonOpenMenuClickHandler(event){
     event.preventDefault();
-    menu.classList.remove('menu--opened');
-    menuWrapper.classList.remove('overlay--active');
-  });
+    openMenu();
+    buttonOpenMenu.removeEventListener('click', openMenu);
+    buttonCloseMenu.addEventListener('click', buttonCloseMenuClickHandler);
+    overlayMenu.addEventListener('click', overlayMenuClickHandler);
+    document.addEventListener('keyup', documentKeyUpHandler);
+  }
 
-  menuWrapper.addEventListener('click', function (event) {
+  function buttonCloseMenuClickHandler(event){
     event.preventDefault();
-    if(event.target === menuWrapper){
-      menu.classList.remove('menu--opened');
-      menuWrapper.classList.remove('overlay--active');
+    closeMenu();
+    buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
+    overlayMenu.removeEventListener('click', overlayMenuClickHandler);
+    buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
+    document.removeEventListener('keyup', documentKeyUpHandler);
+  }
+
+  function overlayMenuClickHandler(event){
+    event.preventDefault();
+    closeMenu();
+    buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
+    overlayMenu.removeEventListener('click', overlayMenuClickHandler);
+    buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
+    document.removeEventListener('keyup', documentKeyUpHandler);
+  }
+
+  function documentKeyUpHandler(event){
+    event.preventDefault();
+    let isEsc = event.code === 'Escape';
+    if(isEsc && !(overlayModal.classList.contains('overlay--active'))){
+      closeMenu();
+      buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
+      overlayMenu.removeEventListener('click', overlayMenuClickHandler);
+      buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
+      document.removeEventListener('keyup', documentKeyUpHandler);
     }
-  });
+  }
 
+  function openMenu(){
+    menu.classList.add('menu--opened');
+    overlayMenu.classList.add('overlay--active');
+  }
+
+  function closeMenu(){
+    menu.classList.remove('menu--opened');
+    overlayMenu.classList.remove('overlay--active');
+  }
 });
