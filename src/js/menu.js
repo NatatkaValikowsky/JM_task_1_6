@@ -13,37 +13,33 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonOpenMenu.removeEventListener('click', openMenu);
     buttonCloseMenu.addEventListener('click', buttonCloseMenuClickHandler);
     overlayMenu.addEventListener('click', overlayMenuClickHandler);
-    document.addEventListener('keyup', documentKeyUpHandler);
+    document.addEventListener('keyup', menuKeyUpHandler);
   }
 
   function buttonCloseMenuClickHandler(event){
     event.preventDefault();
-    closeMenu();
-    buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
-    overlayMenu.removeEventListener('click', overlayMenuClickHandler);
-    buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
-    document.removeEventListener('keyup', documentKeyUpHandler);
+    menuCloseHandlers();
   }
 
   function overlayMenuClickHandler(event){
     event.preventDefault();
+    menuCloseHandlers();
+  }
+
+  function menuKeyUpHandler(event){
+    event.preventDefault();
+    let isEsc = event.code === 'Escape';
+    if(isEsc && !(overlayModal.classList.contains('overlay--active'))){
+      menuCloseHandlers();
+    }
+  }
+
+  function menuCloseHandlers(){
     closeMenu();
     buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
     overlayMenu.removeEventListener('click', overlayMenuClickHandler);
     buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
-    document.removeEventListener('keyup', documentKeyUpHandler);
-  }
-
-  function documentKeyUpHandler(event){
-    event.preventDefault();
-    let isEsc = event.code === 'Escape';
-    if(isEsc && !(overlayModal.classList.contains('overlay--active'))){
-      closeMenu();
-      buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
-      overlayMenu.removeEventListener('click', overlayMenuClickHandler);
-      buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
-      document.removeEventListener('keyup', documentKeyUpHandler);
-    }
+    document.removeEventListener('keyup', menuKeyUpHandler);
   }
 
   function openMenu(){
