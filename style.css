@@ -736,6 +736,10 @@ body {
   background-color: #F8F8F8;
   min-width: 320px; }
 
+.body--covered {
+  height: 100vh;
+  overflow: hidden; }
+
 .wrapper {
   display: flex; }
 
