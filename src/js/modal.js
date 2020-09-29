@@ -1,55 +1,117 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const messageButton = document.querySelectorAll('.ui-button--message'),
-    callbackCloseButton = document.querySelector('.modal--message .modal__close-button'),
-    callbackBlock = document.querySelector('.modal--message'),
-    modalWrapper = document.querySelector('.overlay--modal');
+  const buttonOpenCallbackModal = document.querySelectorAll('.ui-button--phone'),
+        buttonCloseCallbackModal = document.querySelector('.modal--callback .modal__close-button'),
+        buttonOpenMessageModal = document.querySelectorAll('.ui-button--message'),
+        buttonCloseMessageModal = document.querySelector('.modal--message .modal__close-button'),
+        callbackModal = document.querySelector('.modal--callback'),
+        messageModal = document.querySelector('.modal--message'),
+        overlay = document.querySelector('.overlay--modal');
 
-  messageButton.forEach(function (element) {
-    element.addEventListener('click', function (event) {
-      event.preventDefault();
-      callbackBlock.classList.add('modal--opened');
-      modalWrapper.classList.add('overlay--active');
+  buttonOpenCallbackModal.forEach(function (element) {
+    element.addEventListener('click', buttonOpenCallbackModalClickHandler);
+  });
+
+  buttonOpenMessageModal.forEach(function (element) {
+    element.addEventListener('click', buttonOpenMessageModalClickHandler);
+  });
+
+  function buttonOpenCallbackModalClickHandler(event){
+    event.preventDefault();
+    openModal(callbackModal);
+    buttonOpenCallbackModal.forEach(function (element) {
+      element.removeEventListener('click', buttonOpenCallbackModalClickHandler);
     });
-  });
+    buttonCloseCallbackModal.addEventListener('click', buttonCloseCallbackModalClickHandler);
+    overlay.addEventListener('click', overlayClickHandler);
+    document.addEventListener('keyup', documentKeyUpHandler);
+  }
 
-  callbackCloseButton.addEventListener('click', function (event) {
+  function buttonCloseCallbackModalClickHandler(event){
     event.preventDefault();
-    callbackBlock.classList.remove('modal--opened');
-    modalWrapper.classList.remove('overlay--active');
-  });
+    closeModal(callbackModal);
+    callbackModalCloseHandlers();
+  }
 
-  modalWrapper.addEventListener('click', function (event) {
+  function buttonOpenMessageModalClickHandler(event){
     event.preventDefault();
-    if(event.target === modalWrapper){
-      callbackBlock.classList.remove('modal--opened');
-      modalWrapper.classList.remove('overlay--active');
-    }
-  });
-
-  const callButton = document.querySelectorAll('.ui-button--phone'),
-    callCloseButton = document.querySelector('.modal--callback .modal__close-button'),
-    callBlock = document.querySelector('.modal--callback');
-
-  callButton.forEach(function (element) {
-    element.addEventListener('click', function (event) {
-      event.preventDefault();
-      callBlock.classList.add('modal--opened');
-      modalWrapper.classList.add('overlay--active');
+    openModal(messageModal);
+    buttonOpenMessageModal.forEach(function (element) {
+      element.removeEventListener('click', buttonOpenMessageModalClickHandler);
     });
-  });
+    buttonCloseMessageModal.addEventListener('click', buttonCloseMessageModalClickHandler);
+    overlay.addEventListener('click', overlayClickHandler);
+    document.addEventListener('keyup', documentKeyUpHandler);
+  }
 
-  callCloseButton.addEventListener('click', function (event) {
+  function buttonCloseMessageModalClickHandler(event){
     event.preventDefault();
-    callBlock.classList.remove('modal--opened');
-    modalWrapper.classList.remove('overlay--active');
-  });
+    closeModal(messageModal);
+    buttonOpenMessageModal.forEach(function (element) {
+      element.addEventListener('click', buttonOpenMessageModalClickHandler);
+    });
+    buttonCloseMessageModal.removeEventListener('click', buttonCloseMessageModalClickHandler);
+    overlay.removeEventListener('click', overlayClickHandler);
+    document.removeEventListener('keyup', documentKeyUpHandler);
+  }
 
-  modalWrapper.addEventListener('click', function (event) {
+  function overlayClickHandler(event){
     event.preventDefault();
-    if(event.target === modalWrapper){
-      callBlock.classList.remove('modal--opened');
-      modalWrapper.classList.remove('overlay--active');
+    if(messageModal.classList.contains('modal--opened')){
+      closeModal(messageModal);
+      buttonCloseMessageModal.removeEventListener('click', buttonCloseMessageModalClickHandler);
+      buttonOpenMessageModal.forEach(function (element) {
+        element.removeEventListener('click', buttonOpenMessageModalClickHandler);
+      });
+    } else if(callbackModal.classList.contains('modal--opened')){
+      closeModal(callbackModal);
+      buttonCloseCallbackModal.removeEventListener('click', buttonCloseCallbackModalClickHandler);
+      buttonOpenCallbackModal.forEach(function (element) {
+        element.addEventListener('click', buttonOpenCallbackModalClickHandler);
+      });
     }
-  });
+    overlay.removeEventListener('click', overlayClickHandler);
+    document.removeEventListener('keyup', documentKeyUpHandler);
+  }
 
+  function documentKeyUpHandler(event){
+    event.preventDefault();
+    let isEsc = event.code === 'Escape';
+    if(isEsc && !(overlay.classList.contains('overlay--active'))){
+      if(messageModal.classList.contains('modal--opened')){
+        closeModal(messageModal);
+        buttonOpenMessageModal.forEach(function (element) {
+          element.addEventListener('click', buttonOpenMessageModalClickHandler);
+        });
+        buttonCloseMessageModal.removeEventListener('click', buttonCloseMessageModalClickHandler);
+        overlay.removeEventListener('click', overlayClickHandler);
+      } else{
+        closeModal(callbackModal);
+        buttonOpenMessageModal.forEach(function (element) {
+          element.addEventListener('click', buttonOpenMessageModalClickHandler);
+        });
+        buttonCloseMessageModal.removeEventListener('click', buttonCloseMessageModalClickHandler);
+        overlay.removeEventListener('click', overlayClickHandler);
+      }
+      document.removeEventListener('keyup', documentKeyUpHandler);
+    }
+  }
+
+  function callbackModalCloseHandlers(){
+    buttonOpenCallbackModal.forEach(function (element) {
+      element.addEventListener('click', buttonOpenCallbackModalClickHandler);
+    });
+    buttonCloseCallbackModal.removeEventListener('click', buttonCloseCallbackModalClickHandler);
+    overlay.removeEventListener('click', overlayClickHandler);
+    document.removeEventListener('keyup', documentKeyUpHandler);
+  }
+
+  function openModal(modal) {
+    modal.classList.add('modal--opened');
+    overlay.classList.add('overlay--active');
+  }
+
+  function closeModal(modal){
+    modal.classList.remove('modal--opened');
+    overlay.classList.remove('overlay--active');
+  }
 });
