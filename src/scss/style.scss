@@ -42,6 +42,11 @@ body{
   min-width: 320px;
 }
 
+.body--covered{
+  height:100vh;
+  overflow:hidden;
+}
+
 .wrapper{
   display: flex;
 }

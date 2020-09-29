@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonCloseMessageModal = document.querySelector('.modal--message .modal__close-button'),
         callbackModal = document.querySelector('.modal--callback'),
         messageModal = document.querySelector('.modal--message'),
-        overlay = document.querySelector('.overlay--modal');
+        overlay = document.querySelector('.overlay--modal'),
+        menu = document.querySelector('.menu');
 
   buttonOpenCallbackModal.forEach(function (element) {
     element.addEventListener('click', buttonOpenCallbackModalClickHandler);
@@ -92,10 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function openModal(modal) {
     modal.classList.add('modal--opened');
     overlay.classList.add('overlay--active');
+    document.body.classList.add('body--covered');
   }
 
   function closeModal(modal){
     modal.classList.remove('modal--opened');
     overlay.classList.remove('overlay--active');
+    if(!menu.classList.contains('menu--opened')){
+      document.body.classList.remove('body--covered');
+    }
   }
 });

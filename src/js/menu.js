@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function openMenu(){
     menu.classList.add('menu--opened');
     overlayMenu.classList.add('overlay--active');
+    document.body.classList.add('body--covered');
   }
 
   function closeMenu(){
     menu.classList.remove('menu--opened');
     overlayMenu.classList.remove('overlay--active');
+    document.body.classList.remove('body--covered');
   }
 });
