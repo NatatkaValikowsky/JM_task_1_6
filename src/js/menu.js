@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   const buttonOpenMenu = document.querySelector('.ui-button--menu'),
-        buttonCloseMenu = document.querySelector('.menu .ui-button--close'),
+        buttonCloseMenu = document.querySelector('.menu__close-button'),
         menu = document.querySelector('.menu'),
         overlayMenu = document.querySelector('.overlay--menu'),
         overlayModal = document.querySelector('.overlay--modal');
-
-  buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
 
   function buttonOpenMenuClickHandler(event){
     event.preventDefault();
@@ -13,33 +11,35 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonOpenMenu.removeEventListener('click', openMenu);
     buttonCloseMenu.addEventListener('click', buttonCloseMenuClickHandler);
     overlayMenu.addEventListener('click', overlayMenuClickHandler);
-    document.addEventListener('keyup', menuKeyUpHandler);
+    document.addEventListener('keyup', escapeKeyDownHandler);
   }
 
   function buttonCloseMenuClickHandler(event){
     event.preventDefault();
-    menuCloseHandlers();
+    closeMenu();
+    closeHandlersWorker();
   }
 
   function overlayMenuClickHandler(event){
     event.preventDefault();
-    menuCloseHandlers();
+    closeMenu();
+    closeHandlersWorker();
   }
 
-  function menuKeyUpHandler(event){
+  function escapeKeyDownHandler(event){
     event.preventDefault();
     let isEsc = event.code === 'Escape';
     if(isEsc && !(overlayModal.classList.contains('overlay--active'))){
-      menuCloseHandlers();
+      closeMenu();
+      closeHandlersWorker();
     }
   }
 
-  function menuCloseHandlers(){
-    closeMenu();
+  function closeHandlersWorker(){
     buttonCloseMenu.removeEventListener('click', buttonCloseMenuClickHandler);
     overlayMenu.removeEventListener('click', overlayMenuClickHandler);
     buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
-    document.removeEventListener('keyup', menuKeyUpHandler);
+    document.removeEventListener('keyup', escapeKeyDownHandler);
   }
 
   function openMenu(){
@@ -53,4 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     overlayMenu.classList.remove('overlay--active');
     document.body.classList.remove('body--covered');
   }
+
+  buttonOpenMenu.addEventListener('click', buttonOpenMenuClickHandler);
 });

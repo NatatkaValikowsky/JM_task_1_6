@@ -1,20 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   const buttonOpenCallbackModal = document.querySelectorAll('.ui-button--phone'),
-        buttonCloseCallbackModal = document.querySelector('.modal--callback .modal__close-button'),
+        buttonCloseCallbackModal = document.querySelector('.modal--callback__close-button'),
         buttonOpenMessageModal = document.querySelectorAll('.ui-button--message'),
-        buttonCloseMessageModal = document.querySelector('.modal--message .modal__close-button'),
+        buttonCloseMessageModal = document.querySelector('.modal--message__close-button'),
         callbackModal = document.querySelector('.modal--callback'),
         messageModal = document.querySelector('.modal--message'),
         overlay = document.querySelector('.overlay--modal'),
         menu = document.querySelector('.menu');
-
-  buttonOpenCallbackModal.forEach(function (element) {
-    element.addEventListener('click', buttonOpenCallbackModalClickHandler);
-  });
-
-  buttonOpenMessageModal.forEach(function (element) {
-    element.addEventListener('click', buttonOpenMessageModalClickHandler);
-  });
 
   function buttonOpenCallbackModalClickHandler(event){
     event.preventDefault();
@@ -24,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     buttonCloseCallbackModal.addEventListener('click', buttonCloseCallbackModalClickHandler);
     overlay.addEventListener('click', overlayClickHandler);
-    document.addEventListener('keyup', modalKeyUpHandler);
+    document.addEventListener('keyup', escapeKeyDownHandler);
   }
 
   function buttonCloseCallbackModalClickHandler(event){
     event.preventDefault();
-    callbackModalCloseHandlers();
+    callbackCloseHandlersWorker();
   }
 
   function buttonOpenMessageModalClickHandler(event){
@@ -40,54 +32,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     buttonCloseMessageModal.addEventListener('click', buttonCloseMessageModalClickHandler);
     overlay.addEventListener('click', overlayClickHandler);
-    document.addEventListener('keyup', modalKeyUpHandler);
+    document.addEventListener('keyup', escapeKeyDownHandler);
   }
 
   function buttonCloseMessageModalClickHandler(event){
     event.preventDefault();
-    messageModalCloseHandlers()
+    messageCloseHandlersWorker()
   }
 
   function overlayClickHandler(event){
     event.preventDefault();
     if(messageModal.classList.contains('modal--opened')){
-      messageModalCloseHandlers()
+      messageCloseHandlersWorker()
     } else if(callbackModal.classList.contains('modal--opened')){
-      callbackModalCloseHandlers();
+      callbackCloseHandlersWorker();
     }
 
   }
 
-  function modalKeyUpHandler(event){
+  function escapeKeyDownHandler(event){
     event.preventDefault();
     let isEsc = event.code === 'Escape';
     if(isEsc && overlay.classList.contains('overlay--active')){
       if(messageModal.classList.contains('modal--opened')){
-        messageModalCloseHandlers()
+        messageCloseHandlersWorker()
       } else{
-        callbackModalCloseHandlers();
+        callbackCloseHandlersWorker();
       }
     }
   }
 
-  function callbackModalCloseHandlers(){
+  function callbackCloseHandlersWorker(){
     closeModal(callbackModal);
     buttonOpenCallbackModal.forEach(function (element) {
       element.addEventListener('click', buttonOpenCallbackModalClickHandler);
     });
     buttonCloseCallbackModal.removeEventListener('click', buttonCloseCallbackModalClickHandler);
     overlay.removeEventListener('click', overlayClickHandler);
-    document.removeEventListener('keyup', modalKeyUpHandler);
+    document.removeEventListener('keyup', escapeKeyDownHandler);
   }
 
-  function messageModalCloseHandlers(){
+  function messageCloseHandlersWorker(){
     closeModal(messageModal);
     buttonOpenMessageModal.forEach(function (element) {
       element.addEventListener('click', buttonOpenMessageModalClickHandler);
     });
     buttonCloseMessageModal.removeEventListener('click', buttonCloseMessageModalClickHandler);
     overlay.removeEventListener('click', overlayClickHandler);
-    document.removeEventListener('keyup', modalKeyUpHandler);
+    document.removeEventListener('keyup', escapeKeyDownHandler);
   }
 
   function openModal(modal) {
@@ -103,4 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.remove('body--covered');
     }
   }
+
+  buttonOpenCallbackModal.forEach(function (element) {
+    element.addEventListener('click', buttonOpenCallbackModalClickHandler);
+  });
+
+  buttonOpenMessageModal.forEach(function (element) {
+    element.addEventListener('click', buttonOpenMessageModalClickHandler);
+  });
 });
