@@ -34,17 +34,15 @@ getSlider.prototype = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-  const mySlider = new getSlider({
-    container: '.slider',
-    options: {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      pagination: {
-        el: '.slider-pagination',
-        clickable: true
-      },
-      slideClass: 'slider-item',
-    }
-  });
+const mySlider = new getSlider({
+  container: '.slider',
+  options: {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    pagination: {
+      el: '.slider-pagination',
+      clickable: true
+    },
+    slideClass: 'slider-item',
+  }
 });
