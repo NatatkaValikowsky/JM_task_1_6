@@ -168,6 +168,11 @@
       .buttons-list .buttons-list__button-text {
         display: block; } }
 
+.contact-list__item {
+  color: #000000;
+  text-decoration: none;
+  display: block; }
+
 .contact-list__item--phone {
   margin-top: 12px;
   font-size: 24px;
@@ -198,7 +203,8 @@
   background-color: transparent;
   padding-left: 30px;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
   .expand-button:before {
     content: "";
     width: 30px;
