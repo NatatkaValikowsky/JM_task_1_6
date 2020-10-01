@@ -1,3 +1,9 @@
+.contact-list__item{
+  color: $dark-text-color;
+  text-decoration: none;
+  display: block;
+}
+
 .contact-list__item--phone{
   margin-top: 12px;
   font-size: 24px;
